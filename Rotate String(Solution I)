@@ -1,0 +1,15 @@
+class Solution:
+    def rotateString(self, s: str, goal: str) -> bool:
+        if len(s)!= len(goal):
+            return 0
+        else:
+            
+            for i in range(len(s)):
+                if s==goal:
+                    return 1
+                else:
+                    r=s[0]
+                    s=s.replace(r,"",1)
+                    s=s+r
+            return 0
+                

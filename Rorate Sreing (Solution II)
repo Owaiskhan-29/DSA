@@ -1,0 +1,9 @@
+class Solution:
+    def rotateString(self, s: str, goal: str) -> bool:
+        if s==goal:
+            return 1
+        else:
+            for i in range(len(s)):
+                if s[i:]+s[:i]==goal:
+                    return 1
+            else: return 0
