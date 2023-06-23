@@ -1,0 +1,9 @@
+class Solution:
+    def xorOperation(self, n: int, start: int) -> int:
+        l=[]
+        s=0
+        for i in range(n):
+            l.append(start+2*i)
+        for j in range(len(l)):
+            s=s^l[j]
+        return s       
