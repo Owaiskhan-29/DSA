@@ -1,0 +1,17 @@
+class Solution:
+    def validateStackSequences(self, pushed: List[int], popped: List[int]) -> bool:
+        s=[]
+        r=len(pushed)
+        s.append(pushed[0])
+        pushed.pop(0)
+        while True:
+            if popped and s and popped[0]==s[-1]:
+                s.pop(-1)
+                popped.pop(0)
+            elif len(pushed)!=0:
+                s.append(pushed[0])
+                pushed.pop(0)
+            else:
+                break
+        return len(pushed)==0 and len(popped)==0
+            
