@@ -1,0 +1,8 @@
+class Solution:
+    def checkAlmostEquivalent(self, w1: str, w2: str) -> bool:
+        a=set(w1+w2)
+        for i in a:
+            if abs(w1.count(i)-w2.count(i))>3:
+                return 0
+        else:
+            return 1
