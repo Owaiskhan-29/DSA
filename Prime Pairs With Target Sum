@@ -1,0 +1,16 @@
+class Solution:
+    def findPrimePairs(self, n: int) -> List[List[int]]:
+        prime=[i for i in range(n+1)]
+        a=[]
+        p=2
+        prime[0],prime[1]=0,0
+        while p**2<=n:
+            if prime[p]:
+                for i in range(p**2,n+1,p):
+                    prime[i]=0
+            p+=1
+        for p in range(2,n//2+1):
+            if prime[p] and prime[n-p]:
+                a.append([p,n-p])
+        return a
+                
