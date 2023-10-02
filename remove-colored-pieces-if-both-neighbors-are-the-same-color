@@ -1,0 +1,10 @@
+class Solution:
+  def winnerOfGame(self, c: str) -> bool:
+    ans=0
+    for i in range(0,len(c)-2):
+      temp=c[i:i+3]
+      if temp=="AAA":
+        ans+=1
+      elif temp=="BBB":
+        ans-=1
+    return ans>0
